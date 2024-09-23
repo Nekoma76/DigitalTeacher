@@ -1,0 +1,20 @@
+[
+  {
+    "fields": {
+      "name": "┴рчютр ",
+      "slug": "bazovaya",
+      "description": "срчютр "
+    },
+    "model": "quizes.category",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "name": "╨рё°шЁхээр ",
+      "slug": "rasshirennaya",
+      "description": "Ёрё°шЁхээр "
+    },
+    "model": "quizes.category",
+    "pk": 2
+  }
+]

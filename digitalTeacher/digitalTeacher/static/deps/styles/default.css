@@ -1,0 +1,27 @@
+html{
+    box-sizing: border-box;
+}
+
+*, ::before, ::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #fff;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+}
+

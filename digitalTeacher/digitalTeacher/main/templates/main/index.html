@@ -1,0 +1,70 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'deps/styles/style.css' %}">
+{% endblock %}
+{% block title %}
+    <title>Главная</title>
+{% endblock %}
+
+{% block headerContent%}
+<div class="header__content">
+    <h2 class="header__title">ДОБРО ПОЖАЛОВАТЬ НА САЙТ DIGITAL&nbsp;TEACHER.KZ</h2>
+    <div></div>
+    <p class="header__desc">Digital TEACHER.kz - это автоматизированная платформа для определения уровня
+        сформированности цифровых компетенций современного педагога. Независимая оценка цифровых компетенций
+        педагогов поможет оценить вашу готовность к цифровой трансформации в профессиональной сфере и сформировать
+        эффективную стратегию повышения цифровой грамотности в области образовательной деятельности.
+    </p>
+    <div></div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="formats">
+    <div class="container formats__container">
+        <div class="formats__content">
+            <h2 class="formats__title">ФОРМАТ ТЕСТИРОВАНИЯ</h2>
+            <p class="formats__desc">Диагностика цифровой грамотности строится с учётом международной методологии
+                DigComp и основывается на и включает в себя оценку по 5 основным сферам:
+            </p>
+            <p class="formats__desc">База тестов разработана ведущими специалистами центра развития и оценки
+                цифровых компетенций педагогов E-Lab.</p>
+        </div>
+    </div>
+</section>
+
+<section class="levels">
+    <div class="container levels__container">
+        <div class="levels__content">
+            <div class="levels__degree">
+                <img src="{% static 'deps/images/content/hand-on-white-laptop.jpg' %}" alt="" class="levels__img">
+                <div class="levels__desc">
+                    <h3 class="level__title">БАЗОВАЯ: диагностика цифровых навыков педагога</h3>
+                    <ul class="levels__list">
+                        <li class="levels__item">Оценка текущего уровня цифровой грамотности педагога в целом</li>
+                        <li class="levels__item">Определение областей знаний, которые педагогам необходимо усвоить</li>
+                        <li class="levels__item">Рекомендации по образовательным траекториям (темы, формы обучения, образовательные ресурсы)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="levels__degree">
+                <div class="levels__desc">
+                    <h3 class="level__title">
+                        РАСШИРЕННАЯ: Диагностика цифровых навыков + компетенции в области работы и создания
+                        цифрового образовательного контента
+                    </h3>
+                    <ul class="levels__list">
+                        <li class="levels__item">Оценка текущего уровня цифровой грамотности педагога в целом</li>
+                        <li class="levels__item">Оценка цифровых компетенций сотрудников в области использования и создания цифрового образовательного контента</li>
+                        <li class="levels__item">Определение областей знаний, которые педагогу необходимо усвоить</li>
+                        <li class="levels__item">Рекомендации по образовательным траекториям (темы, формы обучения, образовательные ресурсы)</li>
+                    </ul>
+                </div>
+                <img src="{% static 'deps/images/content/hand-on-black-laptop.jpg' %}" alt="" class="levels__img">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

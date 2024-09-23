@@ -1,0 +1,143 @@
+
+
+.header__nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.logo{
+    display: block;
+    font-size: 1.5em;
+    color: rgb(25, 119, 249);
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.menu__item:not(:last-child){
+    margin-right: 60px;
+}
+
+.menu__link{
+    font-size: 20px;
+
+}
+
+.header__burger-btn{
+    display: none;
+    position: relative;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border: none;
+    overflow: none;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.header__burger-btn span{
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    left: 5px;
+    background-color: rgb(25, 119, 249);
+    transition: transform .5s, opacity .3s, background-color .3s;
+    will-change: transform;
+    cursor: pointer;
+}
+
+.header__burger-btn:hover span{
+    background-color: rgb(108, 108, 108);
+}
+
+.header__burger-btn span:nth-child(1){
+    transform: translateY(-10px);
+}
+
+.header__burger-btn span:nth-child(3){
+    transform: translateY(10px);
+}
+
+
+/* Крестик */
+
+.header.open .header__burger-btn span{
+    background-color: rgb(25, 119, 249);
+}
+
+.header.open .header__burger-btn span:nth-child(1){
+    transform: translateY(0) rotate(45deg);
+}
+
+.header.open .header__burger-btn span:nth-child(2){
+    opacity: 0;
+}
+
+.header.open .header__burger-btn span:nth-child(3){
+    transform: translateY(0) rotate(-45deg);
+}
+
+@media (max-width: 720px){
+    .header__nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header__burger-btn{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        left: -350px;
+        top: 0;
+        width: 350px;
+        height: 100%;
+        padding: 75px 20px 20px 20px;
+        background-color: #3e3d56;
+        visibility: hidden;
+        transition: transform .5s, visibility .5s;
+        will-change: transform;
+    }
+    
+    .menu__list{
+        display: block;
+    }
+
+    .menu__item:not(:last-child){
+        margin-right: 0;
+    }
+
+    .menu__item{
+        background-color: #323246;
+        margin: 5px 0px;
+        transition: background-color 0.2s;
+    }
+
+    .menu__item:hover{
+        background-color: #6d6d84;
+    }
+
+    .menu__link{
+        display: block;
+        color: white;
+        font-size: 21px;
+        padding: 10px;
+    }
+
+    .header__profile{
+        display: none;
+    }
+
+    .header.open .menu{
+        transform: translateX(100%);
+        visibility: visible;
+    }
+}

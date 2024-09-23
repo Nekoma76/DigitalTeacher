@@ -1,0 +1,44 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'deps/styles/quizes/quiz.css' %}">
+{% endblock %}
+{% block title %}
+    <title>{{ quiz.title }}</title>
+{% endblock %}
+
+{% block content %}
+    {% if not result %}
+        <div class="container quiz__section">
+            <h1 class="quiz__title">{{ quiz.title }}</h1> <br>
+            <form action="{% url 'quizes:quiz' quiz.slug %}" method="post">
+            {% csrf_token %}
+            {% for question in questions %}
+                <h3>{{ question.questionText }}</h3>
+                <ul>
+                    {% for answer in question.answers.all %}
+                        <li class="quiz__answers">
+                            <label>
+                                <input class="radio-box" type="radio" name="question_{{ question.id }}" value="{{ answer.id }}">
+                                <span class="radio-style"></span>
+                                {{ answer.answerText }}
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+            <button class="btn" type="submit">Завершить</button>
+            </form>
+        </div>
+    {% else %}
+        <section class="container result__container">
+            <div class="result__content">
+                <div class="user__result">
+                    <h2 class="user__result">Ваш результат: {{ result.percentage }}%</h2>
+                </div>
+                <p class="result__desc">Вы правильно ответили на {{ result.correct }} из {{ result.total }} вопросов.</p>
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}

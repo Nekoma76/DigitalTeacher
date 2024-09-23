@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'deps/styles/header.css' %}">
+    {% block css%} {% endblock %}
+    {% block title %} {% endblock %}
+    <link rel="stylesheet" href="{% static 'deps/styles/default.css' %}">
+</head>
+<body>
+    <div class="body-wraper">
+        <header class="header">
+            <div class="container header__container">
+                <div class="header__nav">
+                    <a href="{% url 'main:index' %}" class="logo">
+                        <span>DigitalTeacher.kz</span>
+                    </a>
+
+                    <button class="header__burger-btn" id="burger">
+                        <span></span><span></span><span></span>
+                    </button>
+
+                    <nav class="menu" id="menu">
+                        <ul class="menu__list">
+                            <li class="menu__item">
+                                <a href="{% url 'main:index' %}" class="menu__link">Главная</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="{% url 'quizes:index' %}" class="menu__link">Тесты</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                {% block headerContent%}
+
+                {% endblock %}
+            </div>
+        </header>
+
+        <main>
+            {% block content %}
+
+            {% endblock %}
+        </main>
+
+        <footer class="footer">
+
+        </footer>
+    </div>
+    <script defer src="{% static 'deps/scripts/main.js' %}"></script>
+</body>
+</html>

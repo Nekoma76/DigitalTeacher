@@ -1,0 +1,30 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'deps/styles/quizes/catalog.css' %}">
+{% endblock %}
+{% block title %}
+    <title>Список тестов</title>
+{% endblock %}
+{% block content %}
+    <section class="catalog__section">
+        <div class="container catalog__section">
+            {% for quiz in quizes %}
+                <ul class="cards">
+                    <li class="card card_img">
+                        <div class="card__wrap">
+                            <h3 class="card__title">
+                                <a href="{% url 'quizes:quiz' quiz.slug %}" class="card__link">{{ quiz.title }}</a>
+                            </h3>
+                            <p class="card__desc">{{ quiz.description }}</p>
+                        </div>
+                    </li>
+                </ul>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+
+
+

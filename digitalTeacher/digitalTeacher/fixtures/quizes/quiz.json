@@ -1,0 +1,14 @@
+[
+  {
+    "fields": {
+      "title": "╩юья№■ЄхЁэр  уЁрьюЄэюёЄ№",
+      "slug": "kompyuternaya-gramotnost",
+      "description": "ЄхёЄ яю ъюья№■ЄхЁэющ уЁрьюЄэюёЄш",
+      "createdAt": "2024-09-19T08:09:07.901Z",
+      "categories": [
+        1
+      ]
+    },
+    "model": "quizes.quiz",
+    "pk": 1
+  }]
